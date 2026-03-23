@@ -1,0 +1,98 @@
+:root {
+    /* PALETTE  */
+    --color-gold-lightest: #fcde95;
+    --color-gold-light: #fbdd94;
+    --color-gold-soft: #eece80;
+    --color-gold-mid: #d9b86b;
+    --color-gold-warm: #c6a45b;
+    --color-gold-deep: #b08c48;
+
+    --color-brown-light: #957235;
+    --color-brown-mid: #695124;
+    --color-brown-dark: #483618;
+    --color-brown-deep: #2e220f;
+
+    /* UI */
+    --border-radius: 1rem;
+
+    /* FONT */
+    --font-color: #ffffff;
+    --main-font: "Assistant", sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #000000;
+    color: var(--font-color);
+
+    font-family: var(--main-font);
+}
+
+#title {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: var(--font-color);
+    font-family: var(--main-font);
+
+    font-size: 3rem;
+    font-weight: 100;
+    letter-spacing: 0.1em;
+
+    text-align: center;
+    pointer-events: none;
+
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    z-index: 10;
+}
+
+#title.fade-in {
+    opacity: 1;
+}
+
+#title.fade-out {
+    opacity: 0;
+}
+
+#hero {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+    background: #000000;
+
+    z-index: 0;
+}
+
+#hero video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+
+    filter: blur(5px);
+}
+
+#hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background: radial-gradient(circle at center,
+            rgba(0, 0, 0, 0) 40%,
+            rgba(0, 0, 0, 0.6) 75%,
+            rgba(0, 0, 0, 0.9) 100%);
+}
