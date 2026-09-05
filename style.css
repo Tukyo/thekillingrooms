@@ -33,6 +33,266 @@ body {
     font-family: var(--main-font);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--section-padding-block) var(--section-padding-inline);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.1rem var(--section-padding-inline);
+    background-color: transparent;
+    transition: background-color 0.4s ease;
+    z-index: 5;
+}
+
+header.is-scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.1rem var(--section-padding-inline);
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 5;
+}
+
+footer.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+header nav,
+footer nav {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+header a,
+footer a {
+    color: var(--font-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header a:hover,
+header a:focus-visible,
+footer a:hover,
+footer a:focus-visible {
+    color: var(--color-gold-light);
+}
+
+section h2 {
+    margin: 0 0 3rem;
+    font-size: clamp(1.1rem, 0.25rem + 1.9vw, 1.9rem);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-wrap: balance;
+    text-transform: uppercase;
+    color: var(--color-gold-light);
+}
+
+section h2 span {
+    display: block;
+}
+
+section p {
+    max-width: var(--text-width);
+    margin: 0 auto 1.75rem;
+    font-size: 1.0625rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+hr {
+    width: 100%;
+    height: 5rem;
+    margin: 3rem 0;
+    border: 0;
+    background-image: url("assets/images/graphics/Description_Border_Center.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    max-width: var(--text-width);
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: var(--border-radius);
+}
+
+.bleed {
+    max-width: none;
+    padding-inline: max(var(--section-padding-inline), (100% - var(--content-width)) / 2);
+    background-color: #000000;
+}
+
+#gallery-featured {
+    display: block;
+    width: 100%;
+    max-width: var(--text-width);
+    margin: 0 auto;
+    padding: 0;
+    border: 1px solid var(--color-brown-mid);
+    border-radius: var(--border-radius);
+    background: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#gallery ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+    gap: 0.75rem;
+    max-width: var(--text-width);
+    margin: 0.75rem auto 0;
+    padding: 0;
+    list-style: none;
+}
+
+#gallery li button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: calc(var(--border-radius) / 2);
+    background: none;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.55;
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+#gallery li button:hover,
+#gallery li button:focus-visible {
+    opacity: 1;
+}
+
+#gallery li button.is-selected {
+    border-color: var(--color-gold-deep);
+    opacity: 1;
+}
+
+#gallery img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+#lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background-color: rgba(0, 0, 0, 0.92);
+    z-index: 10;
+}
+
+#lightbox[hidden] {
+    display: none;
+}
+
+#lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+#lightbox button {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+#lightbox-close {
+    top: 1rem;
+    right: 1rem;
+}
+
+#lightbox-prev {
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+#lightbox-next {
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+}
+
+#lightbox-close::before,
+#lightbox-close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 2px;
+    background-color: var(--font-color);
+}
+
+#lightbox-close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#lightbox-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#lightbox-prev::before,
+#lightbox-next::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.1rem;
+    height: 1.1rem;
+    box-sizing: border-box;
+    border-right: 2px solid var(--font-color);
+    border-bottom: 2px solid var(--font-color);
+}
+
+#lightbox-prev::before {
+    transform: translate(-30%, -50%) rotate(135deg);
+}
+
+#lightbox-next::before {
+    transform: translate(-70%, -50%) rotate(-45deg);
+}
+
 #page-background {
     position: fixed;
     inset: 0;
@@ -53,57 +313,47 @@ body {
     z-index: 0;
 }
 
-#app {
-    position: relative;
+#hero-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(80vw, 900px);
+    margin: 0;
+    pointer-events: none;
+    animation: logo-fade-in 5s ease forwards;
+    z-index: 2;
+}
+
+#hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: blur(5px);
+}
+
+#hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center,
+            rgba(0, 0, 0, 0) 40%,
+            rgba(0, 0, 0, 0.6) 75%,
+            rgba(0, 0, 0, 0.9) 100%);
     z-index: 1;
 }
 
-.section {
-    max-width: var(--content-width);
-    margin: 0 auto;
-    padding: var(--section-padding-block) var(--section-padding-inline);
-}
-
-.section-title {
-    margin: 0 0 3rem;
-    font-size: clamp(1.1rem, 0.25rem + 1.9vw, 1.9rem);
-    font-weight: 700;
-    line-height: 1.25;
-    letter-spacing: 0.02em;
-    text-align: center;
-    text-wrap: balance;
-    text-transform: uppercase;
-    color: var(--color-gold-light);
-}
-
-.section-title span {
-    display: block;
-}
-
-.section p {
-    max-width: var(--text-width);
-    margin: 0 auto 1.75rem;
-    font-size: 1.0625rem;
-    font-weight: 300;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.82);
+#main {
+    position: relative;
+    z-index: 1;
 }
 
 .lead {
     font-style: normal;
     font-weight: 600;
     color: var(--color-gold-lightest);
-}
-
-.divider {
-    width: 100%;
-    height: 5rem;
-    margin: 3rem 0;
-    border: 0;
-    background-image: url("assets/images/graphics/Description_Border_Center.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .divider-midas {
@@ -133,18 +383,6 @@ body {
     border-color: var(--color-gold-lightest);
     background-color: rgba(176, 140, 72, 0.18);
     color: var(--color-gold-lightest);
-}
-
-#hero-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: min(80vw, 900px);
-    margin: 0;
-    pointer-events: none;
-    animation: logo-fade-in 5s ease forwards;
-    z-index: 2;
 }
 
 #scroll-cue {
@@ -208,28 +446,12 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
 
+    html {
+        scroll-behavior: auto;
+    }
+
     #hero-logo,
     #scroll-cue::before {
         animation: none;
     }
-}
-
-#hero video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: blur(5px);
-}
-
-#hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: radial-gradient(circle at center,
-            rgba(0, 0, 0, 0) 40%,
-            rgba(0, 0, 0, 0.6) 75%,
-            rgba(0, 0, 0, 0.9) 100%);
-    z-index: 1;
 }

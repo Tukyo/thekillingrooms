@@ -47,6 +47,14 @@
 <body>
     <div id="page-background"></div>
 
+    <header>
+        <nav>
+            <a href="#details">Details</a>
+            <a href="#trailers">Trailer</a>
+            <a href="#gallery">Screenshots</a>
+        </nav>
+    </header>
+
     <div id="hero">
         <h1 id="hero-logo">
             <img src="assets/images/graphics/TKR_LOGO.webp" alt="The Killing Rooms">
@@ -54,16 +62,17 @@
 
         <div id="scroll-cue"></div>
     </div>
-    <div id="app">
-        <section id="description" class="section">
-            <hr class="divider divider-midas">
 
-            <h2 class="section-title">
+    <div id="main">
+        <section id="details">
+            <hr class="divider-midas">
+
+            <h2>
                 <span>The world is overpopulated.</span>
                 <span>The Midas Corporation has a solution.</span>
             </h2>
 
-            <hr class="divider">
+            <hr>
 
             <p>The world is running out of resources. With world governments struggling to keep up, The Midas
                 Corporation has developed a solution to the world's overpopulation problem.</p>
@@ -91,15 +100,105 @@
 
             <p class="lead">Will you survive The Killing Rooms?</p>
 
-            <hr class="divider divider-midas">
+            <hr class="divider-midas">
+
+            <a class="cta" href="https://store.steampowered.com/app/2437830/The_Killing_Rooms/" target="_blank"
+                rel="noopener">Wishlist on Steam</a>
+        </section>
+        <section id="trailers" class="bleed">
+            <h2>Announcement Trailer</h2>
+
+            <iframe src="https://www.youtube-nocookie.com/embed/wqsZQOxb1Ko"
+                title="The Killing Rooms — Announcement Trailer" loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </section>
+
+        <section id="gallery">
+            <h2>Screenshots</h2>
+
+            <button type="button" id="gallery-featured">
+                <img src="assets/images/screenshots/Screenshot_00.webp" loading="lazy"
+                    alt="The Midas Corporation facility at night, its gold M lit above the entrance as rain falls across the surrounding city">
+            </button>
+
+            <ul>
+                <li>
+                    <button type="button">
+                        <img src="assets/images/screenshots/Screenshot_00.webp" loading="lazy"
+                            alt="The Midas Corporation facility at night, its gold M lit above the entrance as rain falls across the surrounding city">
+                    </button>
+                </li>
+                <li>
+                    <button type="button">
+                        <img src="assets/images/screenshots/Screenshot_01.webp" loading="lazy"
+                            alt="A blood-spattered holding room lined with benches under harsh fluorescent panels, a single door at the far end">
+                    </button>
+                </li>
+                <li>
+                    <button type="button">
+                        <img src="assets/images/screenshots/Screenshot_02.webp" loading="lazy"
+                            alt="A flashlight beam falls on a mutilated body and pooling blood in the corner of a dark room">
+                    </button>
+                </li>
+                <li>
+                    <button type="button">
+                        <img src="assets/images/screenshots/Screenshot_03.webp" loading="lazy"
+                            alt="A dark industrial level of the facility, steel walkways and railings above an unlit lower floor">
+                    </button>
+                </li>
+                <li>
+                    <button type="button">
+                        <img src="assets/images/screenshots/Screenshot_04.webp" loading="lazy"
+                            alt="A narrow concrete corridor with an Employees Only door and a red-lit exit at the far end">
+                    </button>
+                </li>
+                <li>
+                    <button type="button">
+                        <img src="assets/images/screenshots/Screenshot_05.webp" loading="lazy"
+                            alt="Two identical doors on the far wall of a dark chamber, each lit by a single lamp">
+                    </button>
+                </li>
+                <li>
+                    <button type="button">
+                        <img src="assets/images/screenshots/Screenshot_06.webp" loading="lazy"
+                            alt="A corridor of heavy steel doors marked in red, stretching toward a single exit">
+                    </button>
+                </li>
+                <li>
+                    <button type="button">
+                        <img src="assets/images/screenshots/Screenshot_07.webp" loading="lazy"
+                            alt="A Midas terminal displaying a grid of codes mid-transfer, tracking payload and packet integrity">
+                    </button>
+                </li>
+            </ul>
 
             <a class="cta" href="https://store.steampowered.com/app/2437830/The_Killing_Rooms/" target="_blank"
                 rel="noopener">Wishlist on Steam</a>
         </section>
     </div>
 
+    <footer>
+        <nav>
+            <a href="https://discord.gg/etWzaN47aq" target="_blank" rel="noopener">Discord</a>
+            <a href="https://t.me/tukyohub" target="_blank" rel="noopener">Telegram</a>
+            <a href="https://linkedin.com/in/tukyo" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://store.steampowered.com/app/2437830/The_Killing_Rooms/" target="_blank"
+                rel="noopener">Steam</a>
+            <!-- X and YouTube go here once the accounts exist -->
+        </nav>
+    </footer>
+
+    <div id="lightbox" hidden>
+        <img id="lightbox-image" src="" alt="">
+
+        <button type="button" id="lightbox-prev" aria-label="Previous screenshot"></button>
+        <button type="button" id="lightbox-next" aria-label="Next screenshot"></button>
+        <button type="button" id="lightbox-close" aria-label="Close"></button>
+    </div>
+
     <script src="scripts/hero.js"></script>
-    <script src="scripts/audio.js"></script>
+    <script src="scripts/gallery.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 

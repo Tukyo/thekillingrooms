@@ -1,38 +1,43 @@
 console.log("[Main] Script loaded");
 
 const scrollCue = document.getElementById("scroll-cue");
+const siteHeader = document.querySelector("header");
+const siteFooter = document.querySelector("footer");
 
-if (!scrollCue) {
-    console.error("[Main] #scroll-cue element not found");
+if (!scrollCue || !siteHeader || !siteFooter) {
+    console.error("[Main] #scroll-cue, header or footer not found");
 }
 
 // CONFIG
-const SCROLL_CUE_HIDDEN_CLASS = "is-hidden";
-const SCROLL_CUE_THRESHOLD = 0;
+const SCROLL_THRESHOLD = 0;
 
 // STATE
-let isScrollCueHidden = false;
+let isScrolled = false;
 
 // FLOW
-function updateScrollCue() {
-    if (!scrollCue) { return; }
+function updateOnScroll() {
+    const scrolled = window.scrollY > SCROLL_THRESHOLD;
 
-    const shouldHide = window.scrollY > SCROLL_CUE_THRESHOLD;
+    if (scrolled === isScrolled) { return; }
 
-    if (shouldHide === isScrollCueHidden) { return; }
+    isScrolled = scrolled;
 
-    isScrollCueHidden = shouldHide;
-
-    if (shouldHide) {
-        scrollCue.classList.add(SCROLL_CUE_HIDDEN_CLASS);
-    } else {
-        scrollCue.classList.remove(SCROLL_CUE_HIDDEN_CLASS);
+    if (scrollCue) {
+        scrollCue.classList.toggle("is-hidden", scrolled);
     }
 
-    console.log("[Main] Scroll cue hidden:", shouldHide);
+    if (siteHeader) {
+        siteHeader.classList.toggle("is-scrolled", scrolled);
+    }
+
+    if (siteFooter) {
+        siteFooter.classList.toggle("is-visible", scrolled);
+    }
+
+    console.log("[Main] Scrolled:", scrolled);
 }
 
 // INIT
-window.addEventListener("scroll", updateScrollCue, { passive: true });
+window.addEventListener("scroll", updateOnScroll, { passive: true });
 
-updateScrollCue();
+updateOnScroll();
