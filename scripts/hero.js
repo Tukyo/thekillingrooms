@@ -57,3 +57,28 @@ videoElement.onended = function () {
 
 // START
 loadVideo(currentHeroIndex);
+
+// VISIBILITY
+function handleHeroVisibility(entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            console.log("[Hero] In view, resuming playback");
+
+            videoElement.play().catch(function (error) {
+                console.error("[Hero] Resume failed:", error);
+            });
+        } else {
+            console.log("[Hero] Out of view, pausing playback");
+
+            videoElement.pause();
+        }
+    });
+}
+
+if ("IntersectionObserver" in window) {
+    const heroObserver = new IntersectionObserver(handleHeroVisibility, { threshold: 0 });
+
+    heroObserver.observe(videoElement);
+} else {
+    console.warn("[Hero] IntersectionObserver unsupported, video will play off-screen");
+}
