@@ -1,11 +1,23 @@
 # The Killing Rooms
 
-The world is overpopulated and the “Midas Corporation” in their attempt to solve the world’s overpopulation problem, accidentally opened a portal to another dimension and discovered a cosmic entity “Grod” that demands human sacrifice in exchange for not destroying all life as we know it.
+![](assets/images/graphics/Description_Border_Midas.png)
 
-The world governments have agreed to start a “draft” where all humans are randomly selected to participate in “The Killing Rooms” and are sent to Midas Corporation facilities stationed around the world. Everyone who participates in “The Killing Rooms” has a perceived 50/50 chance to either survive or become a sacrifice to appease “Grod” with either outcome resulting in a very large payout to the individual or their beneficiaries. Participants must play a game of chance by progressing through the Midas Corporation facility choosing between one of two doors in each new room they traverse with no way to go backwards. Each room harbors new progressively terrifying horrors that are manifestations of “Grod” who feeds on the fear of potential sacrifices.
+<h3 align="center"><strong>The world is overpopulated. The Midas Corporation has a solution.</strong></h3>
 
-The kicker? Participants don’t know what their “Killing Room Number” is and they do not know the numeric value assigned to any given door.
+![](assets/images/graphics/Description_Border_Center.png)
 
-The goal is to hit exactly the same numeric value as your “Killing Room” number: If you go over that number, you will be sacrificed, if you manage to get the same number as your designated “Killing Room” number, you survive (or at least that’s what the Midas Corporation wants people to believe). While “Grod” prefers to feast on the life force of those sacrificed, the fear experienced by survivors helps to appease “Grod” from destroying all life as we know it.
+The world is running out of resources. With world governments struggling to keep up, The Midas Corporation has developed a solution to the world's overpopulation problem.
 
-Would you survive “The Killing Rooms”?
+You've been drafted into The Killing Rooms.
+
+Inside the facility, you'll make your way through a series of strange and increasingly terrifying rooms. Every room presents a choice, and you won't always know what you're choosing until it's too late. Explore the facility, look for clues, and try to piece together what is really happening. Make your choices carefully, but don't expect to have all the information you need. The Killing Rooms are designed to keep you guessing. Rooms, encounters, and the path ahead can change from one run to the next. Sometimes you'll get lucky. Sometimes you won't.
+
+The only thing you can be certain of is that something is waiting for you further inside.
+
+Explore a mysterious facility filled with disturbing environments and hidden secrets. Make choices without knowing exactly what lies ahead. Encounter unpredictable horrors as you progress, and search for documents, clues, and other pieces of the story hidden throughout the facility.
+
+The more you discover, the more questions you'll have about Midas Corporation and the true purpose of the Killing Rooms.
+
+Midas Corporation promises that everyone has a chance to survive. Whether that's true is up to you to find out.
+
+**Will you survive The Killing Rooms?**
