@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thekillingrooms.com/sitemap.xml

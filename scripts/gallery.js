@@ -104,6 +104,13 @@ function handleKeydown(event) {
 // INIT
 galleryThumbs.forEach(function (thumb, index) {
     thumb.addEventListener("click", function () {
+        // SECOND CLICK ON THE ALREADY-SELECTED THUMB OPENS THE LIGHTBOX
+        if (index === currentGalleryIndex) {
+            openLightbox();
+
+            return;
+        }
+
         selectImage(index);
     });
 });

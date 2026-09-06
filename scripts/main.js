@@ -2,10 +2,9 @@ console.log("[Main] Script loaded");
 
 const scrollCue = document.getElementById("scroll-cue");
 const siteHeader = document.querySelector("header");
-const siteFooter = document.querySelector("footer");
 
-if (!scrollCue || !siteHeader || !siteFooter) {
-    console.error("[Main] #scroll-cue, header or footer not found");
+if (!scrollCue || !siteHeader) {
+    console.error("[Main] #scroll-cue or header not found");
 }
 
 // CONFIG
@@ -28,10 +27,6 @@ function updateOnScroll() {
 
     if (siteHeader) {
         siteHeader.classList.toggle("is-scrolled", scrolled);
-    }
-
-    if (siteFooter) {
-        siteFooter.classList.toggle("is-visible", scrolled);
     }
 
     console.log("[Main] Scrolled:", scrolled);

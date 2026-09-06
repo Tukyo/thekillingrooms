@@ -24,6 +24,12 @@
     --main-font: "Assistant", sans-serif;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html,
 body {
     margin: 0;
@@ -58,22 +64,32 @@ header.is-scrolled {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+header .cta {
+    box-sizing: border-box;
     width: 100%;
-    padding: 1.1rem var(--section-padding-inline);
-    background-color: rgba(0, 0, 0, 0.9);
+    max-height: 0;
+    margin: 0;
+    padding-block: 0;
+    border-width: 0;
+    text-align: center;
     opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-    z-index: 5;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding-block 0.4s ease, margin-top 0.4s ease, opacity 0.3s ease;
 }
 
-footer.is-visible {
+header.is-scrolled .cta {
+    max-height: 4rem;
+    margin-top: 0.9rem;
+    padding-block: 0.85rem;
+    border-width: 1px;
     opacity: 1;
-    pointer-events: auto;
+}
+
+footer {
+    position: relative;
+    padding: 1.1rem var(--section-padding-inline);
+    background-color: #000000;
+    z-index: 1;
 }
 
 header nav,
@@ -81,6 +97,17 @@ footer nav {
     display: flex;
     justify-content: center;
     gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+footer nav {
+    gap: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+footer svg {
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+    fill: currentColor;
 }
 
 header a,
